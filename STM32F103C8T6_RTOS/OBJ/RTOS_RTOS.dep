@@ -1,6 +1,6 @@
 Dependencies for Project 'RTOS', Target 'RTOS': (DO NOT MODIFY !)
 CompilerVersion: 5060750::V5.06 update 6 (build 750)::.\ARMCC
-F (.\main.c)(0x62C25D83)(-c --cpu Cortex-M3 -D__EVAL --li -g -O0 --apcs=interwork --split_sections -I ..\USER -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HARDWARE\LED -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\HARDWARE\IIC -I ..\HARDWARE\DS1307 -I ..\HARDWARE-IC:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\Device\ARM\ARMCM3\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="531" -DARMCM3 -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
+F (.\main.c)(0x62C2A6B6)(-c --cpu Cortex-M3 -D__EVAL --li -g -O0 --apcs=interwork --split_sections -I ..\USER -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HARDWARE\LED -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\HARDWARE\IIC -I ..\HARDWARE\DS1307 -I ..\HARDWARE-IC:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\Device\ARM\ARMCM3\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="531" -DARMCM3 -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
 I (..\SYSTEM\sys\sys.h)(0x5E961752)
 I (..\USER\stm32f10x.h)(0x4D7777D4)
 I (..\CORE\core_cm3.h)(0x4D517678)
@@ -30,11 +30,9 @@ I (..\STM32F10x_FWLib\inc\stm32f10x_tim.h)(0x4D7776D4)
 I (..\STM32F10x_FWLib\inc\stm32f10x_usart.h)(0x504E8A8E)
 I (..\STM32F10x_FWLib\inc\stm32f10x_wwdg.h)(0x4D7776D4)
 I (..\STM32F10x_FWLib\inc\misc.h)(0x4D7776D4)
-I (..\HARDWARE\LED\LED.h)(0x628A369E)
 I (..\SYSTEM\delay\delay.h)(0x5E9A16CA)
 I (..\SYSTEM\usart\usart.h)(0x5B7724AE)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5EC7840C)
-I (..\HARDWARE\i2c_lcd.h)(0x624CA394)
 I (..\UCOSII\CONFIG\includes.h)(0x5E961962)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5EC78414)
 I (C:\Keil_v5\ARM\ARMCC\include\ctype.h)(0x5EC78414)
@@ -47,9 +45,8 @@ I (..\HARDWARE\ds18b20.h)(0x628850EF)
 I (..\HARDWARE\main.h)(0x628850E0)
 I (..\HARDWARE\stm32f10x_gpio.h)(0x4D7849C4)
 I (..\HARDWARE\gpio.h)(0x624E51C2)
+I (..\HARDWARE\i2c_lcd.h)(0x624CA394)
 I (..\HARDWARE\RTC_BTL.h)(0x625094AA)
-I (..\HARDWARE\servo_drive.h)(0x62875363)
-I (..\HARDWARE\gp_drive.h)(0x625ED3DE)
 F (.\stm32f10x_it.c)(0x550F0C8C)(-c --cpu Cortex-M3 -D__EVAL --li -g -O0 --apcs=interwork --split_sections -I ..\USER -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HARDWARE\LED -I ..\UCOSII\CONFIG -I ..\UCOSII\CORE -I ..\UCOSII\PORT -I ..\HARDWARE\IIC -I ..\HARDWARE\DS1307 -I ..\HARDWARE-IC:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\Device\ARM\ARMCM3\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="531" -DARMCM3 -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\stm32f10x_it.o --omf_browse ..\obj\stm32f10x_it.crf --depend ..\obj\stm32f10x_it.d)
 I (stm32f10x_it.h)(0x4D98ED56)
 I (stm32f10x.h)(0x4D7777D4)

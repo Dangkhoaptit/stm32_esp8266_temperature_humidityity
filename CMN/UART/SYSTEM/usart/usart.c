@@ -301,7 +301,7 @@ uint16_t USART_Gets(USART_TypeDef* USARTx, char* buffer, uint16_t bufsize) {
 		return 0;
 	}
 	
-	/* If available buffer size is more than 0 characters */
+	/* If available buffer size is 					more than 0 characters */
 	while (i < (bufsize - 1)) {
 		/* We have available data */
 		buffer[i] = (char) USART_Getc(USARTx);
