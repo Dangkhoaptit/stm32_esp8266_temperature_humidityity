@@ -1,0 +1,17 @@
+--cpu Cortex-M3
+".\obj\stm32f10x_it.o"
+".\obj\system_stm32f10x.o"
+".\obj\main.o"
+".\obj\usart.o"
+".\obj\misc.o"
+".\obj\dht11_dk.o"
+".\obj\startup_stm32f10x_md.o"
+".\obj\stm32f10x_gpio.o"
+".\obj\stm32f10x_tim.o"
+".\obj\stm32f10x_rcc.o"
+".\obj\stm32f10x_usart.o"
+".\obj\core_cm3.o"
+--strict --scatter ".\obj\DHT11.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\lst\DHT11.map" -o .\obj\DHT11.axf

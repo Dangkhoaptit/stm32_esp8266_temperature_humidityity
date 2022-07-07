@@ -32,13 +32,30 @@ const char *password = "cntt56789"; //--> Your wifi password
 //----------------------------------------
 
 ESP8266WebServer server(80); //--> Server on port 80
-String temperature;
+String Data_In, DHT_Temp, DHT_Hum;
 
 void receiveFromStm32(){//Read from  STM module and send to serial monitor
    if(mySerial.available() > 1){
-          temperature = mySerial.readString();
-          Serial.println( "From Stm32" );
-          Serial.println(temperature);    
+          Data_In = mySerial.readString();
+          if (Data_In[0] == 't')
+          {
+            Serial.println( " " );
+            Serial.println(Data_In);
+            DHT_Temp = "";
+            for(int i = 0 ; i< 4; i++){
+              DHT_Temp  += Data_In[i+3];
+            }
+            Serial.println(DHT_Temp);
+          }
+          else if(Data_In[0] == 'h'){
+            Serial.println( " " );
+            Serial.println(Data_In);
+            DHT_Hum = "";
+            for(int i = 0 ; i< 4; i++){
+              DHT_Hum  += Data_In[i+3];
+            }
+            Serial.println(DHT_Hum);
+          }
     }
 }
 
@@ -50,9 +67,13 @@ void handleRoot()
 
 void handleTemp()
 {
-    server.send(200, "text/plane", temperature);
+    server.send(200, "text/plane", DHT_Temp);
 }
 
+void handleHum()
+{
+    server.send(200, "text/plane", DHT_Hum);
+}
 //--------------------------------------------------------------------------------void setup()
 void setup()
 {
@@ -89,7 +110,7 @@ void setup()
 
     server.on("/", handleRoot);
     server.on("/gettemperature",handleTemp);
-
+    server.on("/gethumidity",handleHum);
     server.begin(); //--> Start server
     Serial.println("HTTP server started");
 

@@ -14,23 +14,30 @@ const char MAIN_page[] PROGMEM = R"=====(
   
   <div class="container">
       <div class="row item-wrap">
-        <h1 style="color:#7d0633;font-family:consolas;">Temperature - Humidity Information</h1>
+        <br>
+        <h1 style="margin-right: 150px; text-align: center; color:#7d0633;font-family:consolas;">Temperature - Humidity Information</h1>
       
       </div>
     <div style="align-items: center; margin-left: 100px;">
       <div class="row">
       <div class="col-12 col-lg-4 item-wrap">
         <div class="flex-item">
-          <p>Temperature</p>
+          <div class="purple-square-container" style="margin-left: 40px;">
+              <p>Temperature</p>
+          </div>
+         
           <canvas id="myCanvas" width="330" height="200"></canvas>
-          <p>Min = 0 &nbsp;&nbsp;&nbsp; Max = 60</p>
+          <p style="margin-left: 30px">Min = 0 &nbsp;&nbsp;&nbsp; Max = 60</p>
         </div>
       </div>
       <div class="col-12 col-lg-4 item-wrap">
         <div class="flex-item">
-          <p>Humidity</p>
+          <div style="margin-left: 50px">
+             <p>Humidity</p>
+          </div>
+         
           <canvas id="myCanvas1" width="330" height="200"></canvas>
-          <p>Min = 0 &nbsp;&nbsp;&nbsp; Max = 100</p>
+          <p style="margin-left: 30px;">Min = 0 &nbsp;&nbsp;&nbsp; Max = 100</p>
         </div>
       </div>
      
@@ -52,6 +59,12 @@ const char MAIN_page[] PROGMEM = R"=====(
     h1 {
       font-size: 1.5rem;
     }
+    .purple-square-container {
+		  height: 100%;
+		  display: flex;
+		  align-items: center;
+		  justify-content: center;
+		}
   
     .flex-container {
       display: flex;
@@ -110,7 +123,7 @@ const char MAIN_page[] PROGMEM = R"=====(
           
         }
       };
-      xhttp.open("GET", "getSYSPressure", true);
+      xhttp.open("GET", "gethumidity", true);
       xhttp.send();
     }
     //------------------------------------------------------------
@@ -129,7 +142,7 @@ const char MAIN_page[] PROGMEM = R"=====(
     var cnt = 0;
     var bar = setInterval(progressBar, 10);
     function progressBar() {
-      var HR = map(getHR, 0, 220, 0, 100);
+      var HR = map(getHR, 0, 60, 0, 100);
       diff = (cnt / 100) * Math.PI * 2;
       context.clearRect(-100, 0, 400, 200);
       context.beginPath();
@@ -144,7 +157,7 @@ const char MAIN_page[] PROGMEM = R"=====(
       context.fillStyle = '#000';
       context.strokeStyle = '#b3cf3c';
       context.textAlign = 'center';
-      if(getHR <= 49 || getHR >= 130){
+      if(getHR <= 20 || getHR >= 30){
         context.strokeStyle = '#ff0000';
         context.textAlign = 'center';
       }
