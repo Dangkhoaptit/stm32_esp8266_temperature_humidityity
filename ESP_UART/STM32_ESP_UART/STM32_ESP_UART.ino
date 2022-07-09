@@ -6,9 +6,9 @@
 * @date: 25-02-2022
 * @brief: This file is the main file of the project
 ******************************************************************************
+*Com3
 */
 
-//===================================================================================Heart Rate Sensor Station Mode
 #include <SoftwareSerial.h>
 #include <ESP8266WiFi.h>
 #include <WiFiClient.h>
@@ -27,16 +27,18 @@ SoftwareSerial mySerial(D4, D5); //RX, TX
 #define ON_Board_LED 0 //--> Defining an On Board LED (GPIO0 = D3), used for indicators when the process of connecting to a wifi router and when there is a client request.
 
 //----------------------------------------SSID and Password of your WiFi router
-const char *ssid = "cntt";          //--> Your wifi name
-const char *password = "cntt56789"; //--> Your wifi password
+const char *ssid = "mixao";          //--> Your wifi name
+const char *password = "987654321"; //--> Your wifi password
 //----------------------------------------
 
 ESP8266WebServer server(80); //--> Server on port 80
 String Data_In, DHT_Temp, DHT_Hum;
 
 void receiveFromStm32(){//Read from  STM module and send to serial monitor
-   if(mySerial.available() > 1){
+   if(mySerial.available() > 0){
           Data_In = mySerial.readString();
+          Serial.println(Data_In);
+          
           if (Data_In[0] == 't')
           {
             Serial.println( " " );
@@ -51,7 +53,7 @@ void receiveFromStm32(){//Read from  STM module and send to serial monitor
             Serial.println( " " );
             Serial.println(Data_In);
             DHT_Hum = "";
-            for(int i = 0 ; i< 4; i++){
+           for(int i = 0 ; i< 4; i++){
               DHT_Hum  += Data_In[i+3];
             }
             Serial.println(DHT_Hum);
@@ -78,8 +80,8 @@ void handleHum()
 void setup()
 {
     // put your setup code here, to run once:
-    Serial.begin(115200);
-    mySerial.begin(115200);
+    Serial.begin(9600);
+    mySerial.begin(9600);
     delay(500);
 
     WiFi.mode(WIFI_STA);

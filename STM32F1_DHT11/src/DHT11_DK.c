@@ -70,7 +70,7 @@ void ReadDHT11(void){
 			}
 		}
 		
-		/* cho chan PB12 len cao */
+		/* Nhan tin hieu phan hoi tu DHT11 */
 		TIM_SetCounter(TIM2, 0);
 		while (TIM_GetCounter(TIM2) < 90) {
 			if (GPIO_ReadInputDataBit(GPIOB, DHT_Pin)) {
